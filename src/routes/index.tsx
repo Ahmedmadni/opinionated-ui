@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/site/CountUp";
 import { SectionHead } from "@/components/site/SectionHead";
 import heroAsset from "@/assets/hero-fleet.jpg";
-import heroVideoAsset from "@/assets/hero-video.mp4.asset.json";
+
 import videoAsset from "@/assets/fleet-video.asset.json";
 import logoAsset from "@/assets/logo.asset.json";
 import projDiriyah from "@/assets/project-diriyah.jpg";
@@ -143,14 +143,13 @@ function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-end bg-charcoal text-white overflow-hidden">
       <video
-        src={heroVideoAsset.url}
+        src="/hero-9fps.mp4"
         poster={heroAsset}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        ref={(el) => { if (el) el.playbackRate = 0.3; }}
         aria-label="أسطول حفارات شركة الأسطول الآلي"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
