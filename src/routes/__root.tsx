@@ -97,8 +97,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A web application that guides distinctive visual design for UIs, aiding aesthetic direction, typography, and unique choices." },
       { property: "og:description", content: "A web application that guides distinctive visual design for UIs, aiding aesthetic direction, typography, and unique choices." },
       { name: "twitter:description", content: "A web application that guides distinctive visual design for UIs, aiding aesthetic direction, typography, and unique choices." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38e42e04-743a-4db5-afeb-8f2c5197fd6b/id-preview-ea0ca878--a96d4035-30e3-4ce5-89e8-054fdd34164f.lovable.app-1781693688451.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38e42e04-743a-4db5-afeb-8f2c5197fd6b/id-preview-ea0ca878--a96d4035-30e3-4ce5-89e8-054fdd34164f.lovable.app-1781693688451.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/17e3d492-61cd-45d2-914c-2dedecd3a4ef/id-preview-34d0a572--6f223605-0e72-4891-8c8b-ee938c19fff0.lovable.app-1781700275905.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/17e3d492-61cd-45d2-914c-2dedecd3a4ef/id-preview-34d0a572--6f223605-0e72-4891-8c8b-ee938c19fff0.lovable.app-1781700275905.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Alexandria:wght@400;500;600;700&family=Barlow:wght@600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700&family=Barlow:wght@600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap",
       },
     ],
   }),
