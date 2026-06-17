@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/site/CountUp";
 import { SectionHead } from "@/components/site/SectionHead";
 import heroAsset from "@/assets/hero-fleet.jpg";
+import heroVideoAsset from "@/assets/hero-video.mp4.asset.json";
 import videoAsset from "@/assets/fleet-video.asset.json";
 import logoAsset from "@/assets/logo.asset.json";
 import projDiriyah from "@/assets/project-diriyah.jpg";
@@ -141,11 +142,18 @@ function HomePage() {
 function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-end bg-charcoal text-white overflow-hidden">
-      <img
-        src={heroAsset}
-        alt="أسطول حفارات شركة الأسطول الآلي"
+      <video
+        src={heroVideoAsset.url}
+        poster={heroAsset}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-label="أسطول حفارات شركة الأسطول الآلي"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
+
       <div
         className="absolute inset-0"
         style={{
