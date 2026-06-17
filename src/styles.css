@@ -36,9 +36,9 @@
   --color-deep-gray: var(--deep-gray);
   --color-sand: var(--sand);
 
-  --font-display: "Readex Pro", "IBM Plex Sans Arabic", system-ui, sans-serif;
-  --font-body: "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif;
-  --font-num: "IBM Plex Sans", "Readex Pro", system-ui, sans-serif;
+  --font-display: "Cairo", "Alexandria", system-ui, sans-serif;
+  --font-body: "Alexandria", "Cairo", system-ui, sans-serif;
+  --font-num: "Cairo", "Alexandria", system-ui, sans-serif;
 }
 
 :root {
@@ -101,8 +101,8 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
+    letter-spacing: 0em;
+    line-height: 1.35;
   }
 
   /* Tabular numerals for stats */
