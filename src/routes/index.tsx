@@ -166,10 +166,6 @@ function Hero() {
       <div className="absolute inset-0 industrial-grid opacity-40" aria-hidden />
 
       <div className="container-x relative pt-32 pb-20 md:pb-28">
-        <div className="flex items-center gap-3 reveal">
-          <img src={logoAsset.url} alt="" className="h-10 w-10 object-contain" />
-          <span className="text-xs tracking-[0.3em] uppercase text-gold">Since 2008 · Riyadh, KSA</span>
-        </div>
         <h1
           className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] max-w-5xl reveal"
           style={{ animationDelay: "120ms" }}
