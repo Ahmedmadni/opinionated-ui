@@ -150,6 +150,7 @@ function Hero() {
         loop
         playsInline
         preload="auto"
+        ref={(el) => { if (el) el.playbackRate = 0.4; }}
         aria-label="أسطول حفارات شركة الأسطول الآلي"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
