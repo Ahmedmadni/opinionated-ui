@@ -166,10 +166,6 @@ function Hero() {
       <div className="absolute inset-0 industrial-grid opacity-40" aria-hidden />
 
       <div className="container-x relative pt-32 pb-20 md:pb-28">
-        <div className="flex items-center gap-3 reveal">
-          <img src={logoAsset.url} alt="" className="h-10 w-10 object-contain" />
-          <span className="text-xs tracking-[0.3em] uppercase text-gold">Since 2008 · Riyadh, KSA</span>
-        </div>
         <h1
           className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] max-w-5xl reveal"
           style={{ animationDelay: "120ms" }}
@@ -201,11 +197,9 @@ function Hero() {
 
         {/* Bottom strip with metric */}
         <div className="mt-16 flex items-end justify-between gap-6 border-t border-white/10 pt-6 reveal" style={{ animationDelay: "480ms" }}>
-          <div>
-            <div className="text-[10px] tracking-[0.3em] text-white/40 uppercase">Active Fleet</div>
-            <div className="mt-1 text-2xl md:text-3xl font-black text-white num">
-              50+ <span className="text-sm text-white/50 font-medium">آلية ثقيلة</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="" className="h-10 w-10 object-contain" />
+            <span className="text-xs tracking-[0.3em] uppercase text-gold">Since 2008 · Riyadh, KSA</span>
           </div>
           <div className="hidden md:block text-left">
             <div className="text-[10px] tracking-[0.3em] text-white/40 uppercase">Scroll</div>
