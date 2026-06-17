@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/site/CountUp";
 import { SectionHead } from "@/components/site/SectionHead";
 import heroAsset from "@/assets/hero-fleet.jpg";
+import heroVideoAsset from "@/assets/hero-video.mp4.asset.json";
 import videoAsset from "@/assets/fleet-video.asset.json";
 import logoAsset from "@/assets/logo.asset.json";
 import projDiriyah from "@/assets/project-diriyah.jpg";
