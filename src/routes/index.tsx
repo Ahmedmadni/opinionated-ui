@@ -142,11 +142,18 @@ function HomePage() {
 function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-end bg-charcoal text-white overflow-hidden">
-      <img
-        src={heroAsset}
-        alt="أسطول حفارات شركة الأسطول الآلي"
+      <video
+        src={heroVideoAsset.url}
+        poster={heroAsset}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-label="أسطول حفارات شركة الأسطول الآلي"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
+
       <div
         className="absolute inset-0"
         style={{
