@@ -155,7 +155,7 @@ function Hero() {
   return (
     <section
       dir="rtl"
-      className="relative min-h-[85vh] md:min-h-[100vh] flex items-center bg-[#111111] text-white overflow-hidden"
+      className="relative min-h-[85vh] md:min-h-[100vh] flex items-end bg-[#111111] text-white overflow-hidden"
     >
       <video
         src="/hero-7fps.mp4"
@@ -203,7 +203,7 @@ function Hero() {
 
           {/* Headline */}
           <h1
-            className="mt-5 font-semibold text-white reveal
+            className="mt-3 font-semibold text-white reveal
                        text-[44px] sm:text-6xl md:text-7xl lg:text-[84px]
                        leading-[1.15] md:leading-[1.1]"
             style={{
@@ -220,7 +220,7 @@ function Hero() {
 
           {/* Subtitle */}
           <p
-            className="mt-5 md:mt-6 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/75 reveal"
+            className="mt-3 md:mt-4 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/75 reveal"
             style={{ animationDelay: "280ms", wordSpacing: "0.02em" }}
           >
             17 عاماً من الريادة في مقاولات البنية التحتية، الهدم المستدام، والحفر
@@ -229,7 +229,7 @@ function Hero() {
 
           {/* CTAs */}
           <div
-            className="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4 reveal"
+            className="mt-5 md:mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3 reveal"
             style={{ animationDelay: "400ms" }}
           >
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
@@ -246,7 +246,7 @@ function Hero() {
 
         {/* Bottom trust strip */}
         <div
-          className="mt-8 md:mt-12 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-5 reveal"
+          className="mt-6 md:mt-8 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-4 reveal"
           style={{ animationDelay: "520ms" }}
         >
           <div className="flex items-center gap-3 min-w-0">
