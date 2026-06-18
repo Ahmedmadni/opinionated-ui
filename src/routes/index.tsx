@@ -67,31 +67,37 @@ const SERVICES = [
     icon: Hammer,
     title: "الهدم المستدام",
     desc: "هدم آمن بأحدث التقنيات مع الالتزام بمعايير السلامة وإعادة تدوير المواد.",
+    image: svcDemolition,
   },
   {
     icon: Mountain,
     title: "الحفر والردم",
     desc: "أسطول حفارات حديث لكافة الأعماق والأحجام — سكني، تجاري، بنية تحتية.",
+    image: svcExcavation,
   },
   {
     icon: Construction,
     title: "البنية التحتية",
     desc: "شبكات مياه وصرف وكهرباء واتصالات، وأعمال التمهيد الإنشائي للمشاريع الكبرى.",
+    image: svcInfrastructure,
   },
   {
     icon: RouteIcon,
     title: "أعمال الطرق",
     desc: "تنفيذ هندسي دقيق للطرق والمسالك الداخلية في المشاريع الحضرية والصناعية.",
+    image: svcRoads,
   },
   {
     icon: Truck,
     title: "النقليات والمعدات",
     desc: "حفارات، قلابات، كرينات، ومعدات تخصصية للتنفيذ المباشر أو التأجير.",
+    image: svcFleet,
   },
   {
     icon: HardHat,
     title: "الاستشارات الهندسية",
     desc: "فريق مهندسين متخصص يقدم استشارات شاملة في التخطيط والتصميم والتنفيذ.",
+    image: svcConsulting,
   },
 ];
 
