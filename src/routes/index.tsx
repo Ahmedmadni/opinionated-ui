@@ -153,9 +153,12 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-end bg-charcoal text-white overflow-hidden">
+    <section
+      dir="rtl"
+      className="relative min-h-[85vh] md:min-h-[100vh] flex items-center bg-[#111111] text-white overflow-hidden"
+    >
       <video
-        src="/hero-5fps.mp4"
+        src="/hero-7fps.mp4"
         poster={heroAsset}
         autoPlay
         muted
@@ -163,58 +166,102 @@ function Hero() {
         playsInline
         preload="auto"
         aria-label="أسطول حفارات شركة الأسطول الآلي"
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
+        className="absolute inset-0 h-full w-full object-cover"
       />
 
+      {/* Dark gradient overlay for readability */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 50%, rgba(26,26,26,0.95) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 45%, rgba(17,17,17,0.92) 100%)",
         }}
         aria-hidden
       />
-      <div className="absolute inset-0 industrial-grid opacity-40" aria-hidden />
+      {/* Side vignette to anchor the text */}
+      <div
+        className="absolute inset-0 hidden md:block"
+        style={{
+          background:
+            "linear-gradient(270deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)",
+        }}
+        aria-hidden
+      />
 
-      <div className="container-x relative pt-32 pb-20 md:pb-28">
-        <h1
-          className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.05] max-w-5xl reveal"
-          style={{ animationDelay: "120ms" }}
-        >
-          نبني <span className="text-gold">المستقبل</span>،<br />
-          نحفر الطريق.
-        </h1>
-        <p
-          className="mt-6 max-w-2xl text-lg md:text-xl text-white/75 leading-relaxed reveal"
-          style={{ animationDelay: "240ms" }}
-        >
-          شركة الأسطول الآلي — 17 عاماً من الريادة في مقاولات البنية التحتية، الهدم المستدام،
-          والحفر بالمملكة العربية السعودية.
-        </p>
-        <div
-          className="mt-10 flex flex-wrap gap-3 reveal"
-          style={{ animationDelay: "360ms" }}
-        >
-          <Button asChild variant="hero" size="xl">
-            <Link to="/services">
-              استعرض خدماتنا
-              <ArrowLeft className="size-5 rtl:rotate-180" />
-            </Link>
-          </Button>
-          <Button asChild variant="ghostGold" size="xl">
-            <Link to="/contact">تواصل معنا</Link>
-          </Button>
+      <div className="container-x relative pt-28 pb-20 md:pt-32 md:pb-24 w-full">
+        <div className="max-w-4xl mr-0 ml-auto text-right">
+          {/* Eyebrow */}
+          <div
+            className="inline-flex items-center gap-3 reveal"
+            style={{ animationDelay: "80ms" }}
+          >
+            <span className="h-px w-10 bg-gold" />
+            <span className="text-[11px] md:text-xs tracking-[0.35em] uppercase text-gold font-semibold">
+              Since 2008 · Riyadh, KSA
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1
+            className="mt-6 font-black text-white reveal
+                       text-[44px] sm:text-6xl md:text-7xl lg:text-[84px]
+                       leading-[1.15] md:leading-[1.1]"
+            style={{
+              animationDelay: "160ms",
+              wordSpacing: "0.12em",
+              letterSpacing: "-0.005em",
+              color: "#F7F7F7",
+            }}
+          >
+            نبني <span className="text-gold">المستقبل</span>،
+            <br />
+            نحفر الطريق.
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className="mt-6 md:mt-7 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/75 reveal"
+            style={{ animationDelay: "280ms", wordSpacing: "0.06em" }}
+          >
+            17 عاماً من الريادة في مقاولات البنية التحتية، الهدم المستدام، والحفر
+            بالمملكة العربية السعودية.
+          </p>
+
+          {/* CTAs */}
+          <div
+            className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 reveal"
+            style={{ animationDelay: "400ms" }}
+          >
+            <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
+              <Link to="/services">
+                استعرض خدماتنا
+                <ArrowLeft className="size-5 rtl:rotate-180" />
+              </Link>
+            </Button>
+            <Button asChild variant="ghostGold" size="xl" className="w-full sm:w-auto">
+              <Link to="/contact">تواصل معنا</Link>
+            </Button>
+          </div>
         </div>
 
-        {/* Bottom strip with metric */}
-        <div className="mt-16 flex items-end justify-between gap-6 border-t border-white/10 pt-6 reveal" style={{ animationDelay: "480ms" }}>
-          <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="" className="h-10 w-10 object-contain" />
-            <span className="text-xs tracking-[0.3em] uppercase text-gold">Since 2008 · Riyadh, KSA</span>
+        {/* Bottom trust strip */}
+        <div
+          className="mt-14 md:mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-6 reveal"
+          style={{ animationDelay: "520ms" }}
+        >
+          <div className="flex items-center gap-3 min-w-0">
+            <img
+              src={logoAsset.url}
+              alt=""
+              className="h-9 w-9 object-contain shrink-0"
+            />
+            <span className="text-[11px] tracking-[0.3em] uppercase text-white/60 truncate">
+              17+ عاماً · 193+ مشروع · 23+ مشروع ضخم
+            </span>
           </div>
-          <div className="hidden md:block text-left">
-            <div className="text-[10px] tracking-[0.3em] text-white/40 uppercase">Scroll</div>
-            <div className="mt-1 h-10 w-px bg-gold mx-auto" />
+          <div className="hidden md:flex items-center gap-2 text-[10px] tracking-[0.35em] text-white/40 uppercase">
+            <span>Scroll</span>
+            <span className="h-8 w-px bg-gold/70" />
           </div>
         </div>
       </div>
