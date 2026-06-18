@@ -143,7 +143,7 @@ function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-end bg-charcoal text-white overflow-hidden">
       <video
-        src="/hero-9fps.mp4"
+        src="/hero-5fps.mp4"
         poster={heroAsset}
         autoPlay
         muted
