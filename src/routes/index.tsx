@@ -31,6 +31,12 @@ import projRoads from "@/assets/project-roads.jpg";
 import projDemolition from "@/assets/project-demolition.jpg";
 import projUtilities from "@/assets/project-utilities.jpg";
 import projTrucks from "@/assets/project-trucks.jpg";
+import svcDemolition from "@/assets/service-demolition.jpg";
+import svcExcavation from "@/assets/service-excavation.jpg";
+import svcInfrastructure from "@/assets/service-infrastructure.jpg";
+import svcRoads from "@/assets/service-roads.jpg";
+import svcFleet from "@/assets/service-fleet.jpg";
+import svcConsulting from "@/assets/service-consulting.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,31 +67,37 @@ const SERVICES = [
     icon: Hammer,
     title: "الهدم المستدام",
     desc: "هدم آمن بأحدث التقنيات مع الالتزام بمعايير السلامة وإعادة تدوير المواد.",
+    image: svcDemolition,
   },
   {
     icon: Mountain,
     title: "الحفر والردم",
     desc: "أسطول حفارات حديث لكافة الأعماق والأحجام — سكني، تجاري، بنية تحتية.",
+    image: svcExcavation,
   },
   {
     icon: Construction,
     title: "البنية التحتية",
     desc: "شبكات مياه وصرف وكهرباء واتصالات، وأعمال التمهيد الإنشائي للمشاريع الكبرى.",
+    image: svcInfrastructure,
   },
   {
     icon: RouteIcon,
     title: "أعمال الطرق",
     desc: "تنفيذ هندسي دقيق للطرق والمسالك الداخلية في المشاريع الحضرية والصناعية.",
+    image: svcRoads,
   },
   {
     icon: Truck,
     title: "النقليات والمعدات",
     desc: "حفارات، قلابات، كرينات، ومعدات تخصصية للتنفيذ المباشر أو التأجير.",
+    image: svcFleet,
   },
   {
     icon: HardHat,
     title: "الاستشارات الهندسية",
     desc: "فريق مهندسين متخصص يقدم استشارات شاملة في التخطيط والتصميم والتنفيذ.",
+    image: svcConsulting,
   },
 ];
 
@@ -273,23 +285,45 @@ function Services() {
           {SERVICES.map((s, i) => (
             <article
               key={i}
-              className="group relative bg-background p-8 transition-colors hover:bg-sand"
+              className="group relative bg-background overflow-hidden transition-colors hover:bg-sand flex flex-col"
             >
-              <div className="flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                <span className="num text-gold">0{i + 1}</span>
-                <span className="h-px w-8 bg-border" />
-                <span>خدمة</span>
+              <div className="relative aspect-[16/10] overflow-hidden bg-deep-gray">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  loading="lazy"
+                  width={1024}
+                  height={640}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%)",
+                  }}
+                  aria-hidden
+                />
+                <div className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center bg-charcoal/90 text-gold">
+                  <s.icon className="size-5" strokeWidth={1.5} />
+                </div>
               </div>
-              <s.icon className="mt-6 size-10 text-charcoal group-hover:text-gold transition-colors" strokeWidth={1.5} />
-              <h3 className="mt-6 text-2xl font-bold text-charcoal">{s.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              <Link
-                to="/services"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-charcoal group-hover:text-gold-muted"
-              >
-                اقرأ أكثر
-                <ArrowLeft className="size-4 rtl:rotate-180" />
-              </Link>
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+                  <span className="num text-gold">0{i + 1}</span>
+                  <span className="h-px w-8 bg-border" />
+                  <span>خدمة</span>
+                </div>
+                <h3 className="mt-4 text-2xl font-bold text-charcoal">{s.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{s.desc}</p>
+                <Link
+                  to="/services"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-charcoal group-hover:text-gold-muted"
+                >
+                  اقرأ أكثر
+                  <ArrowLeft className="size-4 rtl:rotate-180" />
+                </Link>
+              </div>
             </article>
           ))}
         </div>

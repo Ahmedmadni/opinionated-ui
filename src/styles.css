@@ -36,9 +36,9 @@
   --color-deep-gray: var(--deep-gray);
   --color-sand: var(--sand);
 
-  --font-display: "Cairo", "Alexandria", system-ui, sans-serif;
+  --font-display: "Noto Kufi Arabic", "Cairo", "Alexandria", system-ui, sans-serif;
   --font-body: "Alexandria", "Cairo", system-ui, sans-serif;
-  --font-num: "Cairo", "Alexandria", system-ui, sans-serif;
+  --font-num: "Noto Kufi Arabic", "Cairo", "Alexandria", system-ui, sans-serif;
 }
 
 :root {
@@ -102,7 +102,8 @@
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: 0em;
-    line-height: 1.35;
+    word-spacing: 0.08em;
+    line-height: 1.5;
   }
 
   /* Tabular numerals for stats */
