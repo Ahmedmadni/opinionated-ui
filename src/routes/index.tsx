@@ -31,6 +31,12 @@ import projRoads from "@/assets/project-roads.jpg";
 import projDemolition from "@/assets/project-demolition.jpg";
 import projUtilities from "@/assets/project-utilities.jpg";
 import projTrucks from "@/assets/project-trucks.jpg";
+import svcDemolition from "@/assets/service-demolition.jpg";
+import svcExcavation from "@/assets/service-excavation.jpg";
+import svcInfrastructure from "@/assets/service-infrastructure.jpg";
+import svcRoads from "@/assets/service-roads.jpg";
+import svcFleet from "@/assets/service-fleet.jpg";
+import svcConsulting from "@/assets/service-consulting.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
