@@ -310,6 +310,7 @@ function Hero() {
           </motion.span>
         </motion.a>
       )}
+    </section>
   );
 }
 
