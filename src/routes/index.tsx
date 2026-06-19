@@ -453,12 +453,9 @@ function WhySection() {
           />
           <div className="mt-8 aspect-video overflow-hidden border border-charcoal/10 shadow-[var(--shadow-card)] bg-charcoal">
             <video
-              key={shouldReduceMotion ? "reduced" : "normal"}
               ref={videoRef}
               src={videoAsset.url}
-              autoPlay={!shouldReduceMotion}
               muted
-              loop={!shouldReduceMotion}
               playsInline
               className="h-full w-full object-cover"
             />
