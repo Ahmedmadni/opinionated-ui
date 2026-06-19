@@ -13,7 +13,8 @@ import {
   Users,
   ChevronDown,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useRef, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -154,6 +155,20 @@ function HomePage() {
 }
 
 function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (shouldReduceMotion) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      videoRef.current.loop = false;
+    } else {
+      videoRef.current.loop = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [shouldReduceMotion]);
   return (
     <section
       dir="rtl"
@@ -164,11 +179,10 @@ function Hero() {
                  md:[@supports(height:100dvh)]:min-h-[100dvh]"
     >
       <video
+        ref={videoRef}
         src="/hero-7fps.mp4"
         poster={heroAsset}
-        autoPlay
         muted
-        loop
         playsInline
         preload="auto"
         aria-label="أسطول حفارات شركة الأسطول الآلي"
@@ -269,23 +283,36 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.a
-        href="#partners"
-        aria-label="انتقل للأسفل"
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.6 }}
-        className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
-      >
-        <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
-        <motion.span
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50"
+      {shouldReduceMotion ? (
+        <a
+          href="#partners"
+          aria-label="انتقل للأسفل"
+          className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
         >
-          <ChevronDown className="size-4 text-gold" />
-        </motion.span>
-      </motion.a>
+          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
+          <span className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50">
+            <ChevronDown className="size-4 text-gold" />
+          </span>
+        </a>
+      ) : (
+        <motion.a
+          href="#partners"
+          aria-label="انتقل للأسفل"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
+        >
+          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
+          <motion.span
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50"
+          >
+            <ChevronDown className="size-4 text-gold" />
+          </motion.span>
+        </motion.a>
+      )}
     </section>
   );
 }
@@ -401,6 +428,20 @@ function Services() {
 }
 
 function WhySection() {
+  const shouldReduceMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (shouldReduceMotion) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      videoRef.current.loop = false;
+    } else {
+      videoRef.current.loop = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [shouldReduceMotion]);
   return (
     <section className="relative bg-sand py-24 overflow-hidden">
       <div className="container-x grid lg:grid-cols-12 gap-12">
@@ -412,10 +453,9 @@ function WhySection() {
           />
           <div className="mt-8 aspect-video overflow-hidden border border-charcoal/10 shadow-[var(--shadow-card)] bg-charcoal">
             <video
+              ref={videoRef}
               src={videoAsset.url}
-              autoPlay
               muted
-              loop
               playsInline
               className="h-full w-full object-cover"
             />
