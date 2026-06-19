@@ -159,9 +159,14 @@ function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (shouldReduceMotion && videoRef.current) {
+    if (!videoRef.current) return;
+    if (shouldReduceMotion) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
+      videoRef.current.loop = false;
+    } else {
+      videoRef.current.loop = true;
+      videoRef.current.play().catch(() => {});
     }
   }, [shouldReduceMotion]);
   return (
