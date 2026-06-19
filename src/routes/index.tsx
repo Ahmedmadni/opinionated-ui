@@ -293,7 +293,7 @@ function Hero() {
 function PartnersMarquee() {
   const items = [...PARTNERS, ...PARTNERS];
   return (
-    <section className="bg-charcoal border-y border-white/5 overflow-hidden">
+    <section id="partners" className="bg-charcoal border-y border-white/5 overflow-hidden scroll-mt-16">
       <div className="py-6 overflow-hidden">
         <div className="marquee whitespace-nowrap text-white/40">
           {items.map((p, i) => (
