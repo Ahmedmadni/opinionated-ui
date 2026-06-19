@@ -179,13 +179,10 @@ function Hero() {
                  md:[@supports(height:100dvh)]:min-h-[100dvh]"
     >
       <video
-        key={shouldReduceMotion ? "reduced" : "normal"}
         ref={videoRef}
         src="/hero-7fps.mp4"
         poster={heroAsset}
-        autoPlay={!shouldReduceMotion}
         muted
-        loop={!shouldReduceMotion}
         playsInline
         preload="auto"
         aria-label="أسطول حفارات شركة الأسطول الآلي"
