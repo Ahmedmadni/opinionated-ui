@@ -11,7 +11,9 @@ import {
   Wrench,
   Award,
   Users,
+  ChevronDown,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -155,7 +157,11 @@ function Hero() {
   return (
     <section
       dir="rtl"
-      className="relative min-h-[85vh] md:min-h-[100vh] flex items-end bg-[#111111] text-white overflow-hidden"
+      className="relative flex items-end bg-[#111111] text-white overflow-hidden
+                 min-h-[85svh] sm:min-h-[90svh] md:min-h-[100svh]
+                 [@supports(height:100dvh)]:min-h-[85dvh]
+                 sm:[@supports(height:100dvh)]:min-h-[90dvh]
+                 md:[@supports(height:100dvh)]:min-h-[100dvh]"
     >
       <video
         src="/hero-7fps.mp4"
@@ -174,7 +180,7 @@ function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.55) 45%, rgba(17,17,17,0.92) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.55) 45%, rgba(17,17,17,0.95) 100%)",
         }}
         aria-hidden
       />
@@ -188,24 +194,24 @@ function Hero() {
         aria-hidden
       />
 
-      <div className="container-x relative pt-28 pb-12 md:pt-32 md:pb-16 w-full">
+      <div className="container-x relative pt-24 pb-10 sm:pt-28 sm:pb-14 md:pt-32 md:pb-20 w-full">
         <div className="max-w-4xl mr-0 ml-auto text-right">
           {/* Eyebrow */}
           <div
             className="inline-flex items-center gap-3 reveal"
             style={{ animationDelay: "80ms" }}
           >
-            <span className="h-px w-10 bg-gold" />
-            <span className="text-[11px] md:text-xs tracking-[0.35em] uppercase text-gold font-semibold">
+            <span className="h-px w-8 sm:w-10 bg-gold" />
+            <span className="text-[10px] sm:text-[11px] md:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase text-gold font-semibold">
               Since 2008 · Riyadh, KSA
             </span>
           </div>
 
           {/* Headline */}
           <h1
-            className="mt-3 font-semibold text-white reveal
-                       text-[44px] sm:text-6xl md:text-7xl lg:text-[84px]
-                       leading-[1.15] md:leading-[1.1]"
+            className="mt-3 sm:mt-4 font-semibold text-white reveal
+                       text-[36px] sm:text-5xl md:text-7xl lg:text-[84px]
+                       leading-[1.2] sm:leading-[1.15] md:leading-[1.1]"
             style={{
               animationDelay: "160ms",
               wordSpacing: "0.02em",
@@ -220,7 +226,7 @@ function Hero() {
 
           {/* Subtitle */}
           <p
-            className="mt-3 md:mt-4 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/75 reveal"
+            className="mt-3 md:mt-5 max-w-2xl text-sm sm:text-base md:text-xl leading-[1.8] md:leading-relaxed text-white/75 reveal"
             style={{ animationDelay: "280ms", wordSpacing: "0.02em" }}
           >
             17 عاماً من الريادة في مقاولات البنية التحتية، الهدم المستدام، والحفر
@@ -229,7 +235,7 @@ function Hero() {
 
           {/* CTAs */}
           <div
-            className="mt-5 md:mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3 reveal"
+            className="mt-5 md:mt-7 flex flex-col sm:flex-row gap-2.5 sm:gap-3 reveal"
             style={{ animationDelay: "400ms" }}
           >
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
@@ -246,25 +252,40 @@ function Hero() {
 
         {/* Bottom trust strip */}
         <div
-          className="mt-6 md:mt-8 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-4 reveal"
+          className="mt-8 md:mt-12 flex flex-wrap items-center justify-between gap-4 sm:gap-6 border-t border-white/10 pt-4 reveal"
           style={{ animationDelay: "520ms" }}
         >
           <div className="flex items-center gap-3 min-w-0">
             <img
               src={logoAsset.url}
               alt=""
-              className="h-9 w-9 object-contain shrink-0"
+              className="h-8 w-8 sm:h-9 sm:w-9 object-contain shrink-0"
             />
-            <span className="text-[11px] tracking-[0.3em] uppercase text-white/60 truncate">
+            <span className="text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/60 truncate">
               17+ عاماً · 193+ مشروع · 23+ مشروع ضخم
             </span>
           </div>
-          <div className="hidden md:flex items-center gap-2 text-[10px] tracking-[0.35em] text-white/40 uppercase">
-            <span>Scroll</span>
-            <span className="h-8 w-px bg-gold/70" />
-          </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.a
+        href="#partners"
+        aria-label="انتقل للأسفل"
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.6 }}
+        className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
+      >
+        <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
+        <motion.span
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50"
+        >
+          <ChevronDown className="size-4 text-gold" />
+        </motion.span>
+      </motion.a>
     </section>
   );
 }
@@ -272,7 +293,7 @@ function Hero() {
 function PartnersMarquee() {
   const items = [...PARTNERS, ...PARTNERS];
   return (
-    <section className="bg-charcoal border-y border-white/5 overflow-hidden">
+    <section id="partners" className="bg-charcoal border-y border-white/5 overflow-hidden scroll-mt-16">
       <div className="py-6 overflow-hidden">
         <div className="marquee whitespace-nowrap text-white/40">
           {items.map((p, i) => (
