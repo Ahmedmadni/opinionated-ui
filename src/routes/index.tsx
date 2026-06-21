@@ -213,7 +213,7 @@ function Hero() {
           {/* Eyebrow */}
           <div
             className="inline-flex items-center gap-3 reveal"
-            style={{ animationDelay: "80ms" }}
+            style={{ animationDelay: "60ms" }}
           >
             <span className="h-px w-8 sm:w-10 bg-gold" />
             <span className="text-[10px] sm:text-[11px] md:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase text-gold font-semibold">
@@ -225,9 +225,9 @@ function Hero() {
           <h1
             className="mt-3 sm:mt-4 font-semibold text-white reveal"
             style={{
-              animationDelay: "160ms",
+              animationDelay: "120ms",
               wordSpacing: "0.02em",
-              letterSpacing: "0em",
+              letterSpacing: "0.04em",
               color: "#F7F7F7",
             }}
           >
@@ -242,7 +242,7 @@ function Hero() {
           {/* Subtitle */}
           <p
             className="mt-3 md:mt-5 max-w-2xl text-sm sm:text-base md:text-xl leading-[1.8] md:leading-relaxed text-white/75 reveal"
-            style={{ animationDelay: "280ms", wordSpacing: "0.02em" }}
+            style={{ animationDelay: "180ms", wordSpacing: "0.02em" }}
           >
             17 عاماً من الريادة في مقاولات البنية التحتية، الهدم المستدام، والحفر
             بالمملكة العربية السعودية.
