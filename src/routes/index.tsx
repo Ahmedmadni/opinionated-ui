@@ -268,7 +268,7 @@ function Hero() {
         {/* Bottom trust strip */}
         <div
           className="mt-8 md:mt-12 flex flex-wrap items-center justify-between gap-4 sm:gap-6 border-t border-white/10 pt-4 reveal"
-          style={{ animationDelay: "520ms" }}
+          style={{ animationDelay: "300ms" }}
         >
           <div className="flex items-center gap-3 min-w-0">
             <img
