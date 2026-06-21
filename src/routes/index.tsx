@@ -180,7 +180,7 @@ function Hero() {
     >
       <video
         ref={videoRef}
-        src="/hero-7fps.mp4"
+        src="/hero-8fps.mp4"
         poster={heroAsset}
         muted
         playsInline
