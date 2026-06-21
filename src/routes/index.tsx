@@ -234,7 +234,7 @@ function Hero() {
             <span className="block text-[36px] sm:text-5xl md:text-7xl lg:text-[84px] leading-[1.2] sm:leading-[1.15] md:leading-[1.1]">
               نبني <span className="text-gold">المستقبل</span>،
             </span>
-            <span className="block text-[28px] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mt-3 sm:mt-4">
+            <span className="block text-[28px] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mt-5 sm:mt-6 md:mt-8">
               نحفر الطريق.
             </span>
           </h1>
