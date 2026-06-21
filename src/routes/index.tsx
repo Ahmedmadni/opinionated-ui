@@ -251,7 +251,7 @@ function Hero() {
           {/* CTAs */}
           <div
             className="mt-5 md:mt-7 flex flex-col sm:flex-row gap-2.5 sm:gap-3 reveal"
-            style={{ animationDelay: "400ms" }}
+            style={{ animationDelay: "240ms" }}
           >
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
               <Link to="/services">
