@@ -223,9 +223,7 @@ function Hero() {
 
           {/* Headline */}
           <h1
-            className="mt-3 sm:mt-4 font-semibold text-white reveal
-                       text-[36px] sm:text-5xl md:text-7xl lg:text-[84px]
-                       leading-[1.2] sm:leading-[1.15] md:leading-[1.1]"
+            className="mt-3 sm:mt-4 font-semibold text-white reveal"
             style={{
               animationDelay: "160ms",
               wordSpacing: "0.02em",
@@ -233,9 +231,12 @@ function Hero() {
               color: "#F7F7F7",
             }}
           >
-            نبني <span className="text-gold">المستقبل</span>،
-            <br />
-            نحفر الطريق.
+            <span className="block text-[36px] sm:text-5xl md:text-7xl lg:text-[84px] leading-[1.2] sm:leading-[1.15] md:leading-[1.1]">
+              نبني <span className="text-gold">المستقبل</span>،
+            </span>
+            <span className="block text-[28px] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mt-1">
+              نحفر الطريق.
+            </span>
           </h1>
 
           {/* Subtitle */}
