@@ -82,7 +82,7 @@ export function SiteHeader() {
       {/* Mobile slide-in */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-20 z-40 bg-charcoal transition-transform duration-300",
+          "lg:hidden fixed inset-0 top-20 md:top-24 z-40 bg-charcoal transition-transform duration-300",
           open ? "translate-x-0" : "translate-x-full",
         )}
         aria-hidden={!open}
