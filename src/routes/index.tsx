@@ -190,7 +190,7 @@ function Hero() {
         aria-hidden
       />
 
-      <div className="container-x relative pt-24 pb-10 sm:pt-28 sm:pb-14 md:pt-32 md:pb-20 w-full">
+      <div className="container-x relative pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24 w-full">
         <div className="max-w-4xl mr-0 ml-auto text-right">
           {/* Eyebrow */}
           <div
@@ -205,7 +205,7 @@ function Hero() {
 
           {/* Headline */}
           <h1
-            className="mt-3 sm:mt-4 text-white reveal"
+            className="mt-4 sm:mt-5 text-white reveal"
             style={{
               animationDelay: "120ms",
               wordSpacing: "0.02em",
@@ -213,17 +213,17 @@ function Hero() {
               fontWeight: 600,
             }}
           >
-            <span className="block text-[36px] sm:text-5xl md:text-7xl lg:text-[84px] leading-[1.2] sm:leading-[1.15] md:leading-[1.1]">
+            <span className="block text-[40px] sm:text-[56px] md:text-[80px] lg:text-[96px] leading-[1.15] sm:leading-[1.1] md:leading-[1.05]">
               نبني <span className="text-gold">المستقبل</span>،
             </span>
-            <span className="block text-[26px] sm:text-[32px] md:text-[44px] lg:text-[52px] leading-[1.25] mt-5 sm:mt-6 md:mt-8 font-medium text-white/95">
+            <span className="block text-[28px] sm:text-[38px] md:text-[52px] lg:text-[64px] leading-[1.2] mt-6 sm:mt-8 md:mt-10 font-medium text-white/95">
               نحفر الطريق.
             </span>
           </h1>
 
           {/* Subtitle */}
           <p
-            className="mt-3 md:mt-5 max-w-2xl text-sm sm:text-base md:text-xl leading-[1.8] md:leading-relaxed text-white/75 reveal"
+            className="mt-5 md:mt-7 max-w-2xl text-base sm:text-lg md:text-[22px] leading-[1.8] md:leading-relaxed text-white/75 reveal"
             style={{ animationDelay: "180ms", wordSpacing: "0.02em" }}
           >
             17 عاماً من الريادة في مقاولات البنية التحتية، الهدم المستدام، والحفر
@@ -232,16 +232,16 @@ function Hero() {
 
           {/* CTAs */}
           <div
-            className="mt-5 md:mt-7 flex flex-col sm:flex-row gap-2.5 sm:gap-3 reveal"
+            className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 reveal"
             style={{ animationDelay: "240ms" }}
           >
-            <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
+            <Button asChild variant="hero" size="xl" className="w-full sm:w-auto h-14 sm:h-16 px-8 sm:px-12 text-base sm:text-lg">
               <Link to="/services">
                 استعرض خدماتنا
-                <ArrowLeft className="size-5 rtl:rotate-180" />
+                <ArrowLeft className="size-5 sm:size-6 rtl:rotate-180" />
               </Link>
             </Button>
-            <Button asChild variant="ghostGold" size="xl" className="w-full sm:w-auto">
+            <Button asChild variant="ghostGold" size="xl" className="w-full sm:w-auto h-14 sm:h-16 px-8 sm:px-12 text-base sm:text-lg">
               <Link to="/contact">تواصل معنا</Link>
             </Button>
           </div>
@@ -249,16 +249,16 @@ function Hero() {
 
         {/* Bottom trust strip */}
         <div
-          className="mt-8 md:mt-12 flex flex-wrap items-center justify-between gap-4 sm:gap-6 border-t border-white/10 pt-4 reveal"
+          className="mt-10 md:mt-14 flex flex-wrap items-center justify-between gap-4 sm:gap-6 border-t border-white/10 pt-5 reveal"
           style={{ animationDelay: "300ms" }}
         >
-          <div className="flex items-center gap-3 min-w-0">
+          <div className="flex items-center gap-4 min-w-0">
             <img
               src={logoWhite}
               alt=""
-              className="h-8 w-8 sm:h-9 sm:w-9 object-contain shrink-0"
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain shrink-0"
             />
-            <span className="text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/60 truncate">
+            <span className="text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white/60 truncate">
               17+ عاماً · 193+ مشروع · 23+ مشروع ضخم
             </span>
           </div>

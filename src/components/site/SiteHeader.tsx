@@ -33,9 +33,9 @@ export function SiteHeader() {
           : "bg-transparent",
       )}
     >
-      <div className="container-x flex h-20 items-center justify-between gap-6">
+      <div className="container-x flex h-20 md:h-24 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-2" aria-label="شركة الأسطول الآلي">
-          <img src={logoWhite} alt="الأسطول الآلي" className="h-14 w-auto object-contain" />
+          <img src={logoWhite} alt="الأسطول الآلي" className="h-16 md:h-[72px] w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="رئيسية">
@@ -44,7 +44,7 @@ export function SiteHeader() {
               key={n.to}
               to={n.to}
               activeOptions={{ exact: n.to === "/" }}
-              className="relative px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
+              className="relative px-4 py-2 text-base font-medium text-white/80 hover:text-white transition-colors"
               activeProps={{ className: "text-gold" }}
             >
               {n.label}
@@ -52,18 +52,18 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+966508331111"
-            className="flex items-center gap-2 text-sm text-white/70 hover:text-gold transition-colors num"
+            className="flex items-center gap-2 text-base text-white/70 hover:text-gold transition-colors num"
             dir="ltr"
           >
-            <Phone className="size-4" />
+            <Phone className="size-5" />
             +966 50 833 1111
           </a>
           <Link
             to="/contact"
-            className="inline-flex h-10 items-center rounded-md bg-gold px-5 text-sm font-bold text-charcoal hover:bg-gold-muted hover:text-white transition-colors"
+            className="inline-flex h-12 items-center rounded-md bg-gold px-6 text-base font-bold text-charcoal hover:bg-gold-muted hover:text-white transition-colors"
           >
             تواصل معنا
           </Link>
@@ -82,7 +82,7 @@ export function SiteHeader() {
       {/* Mobile slide-in */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-20 z-40 bg-charcoal transition-transform duration-300",
+          "lg:hidden fixed inset-0 top-20 md:top-24 z-40 bg-charcoal transition-transform duration-300",
           open ? "translate-x-0" : "translate-x-full",
         )}
         aria-hidden={!open}
