@@ -153,20 +153,6 @@ function HomePage() {
 }
 
 function Hero() {
-  const shouldReduceMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (!videoRef.current) return;
-    if (shouldReduceMotion) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      videoRef.current.loop = false;
-    } else {
-      videoRef.current.loop = true;
-      videoRef.current.play().catch(() => {});
-    }
-  }, [shouldReduceMotion]);
   return (
     <section
       dir="rtl"
@@ -176,14 +162,12 @@ function Hero() {
                  sm:[@supports(height:100dvh)]:min-h-[90dvh]
                  md:[@supports(height:100dvh)]:min-h-[100dvh]"
     >
-      <video
-        ref={videoRef}
-        src="/hero-8fps.mp4"
-        poster={heroAsset}
-        muted
-        playsInline
-        preload="auto"
-        aria-label="أسطول حفارات شركة الأسطول الآلي"
+      <img
+        src={heroAsset}
+        alt="مشاريع البنية التحتية للأسطول الآلي عند غروب الشمس في الرياض"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
@@ -192,7 +176,7 @@ function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.55) 45%, rgba(17,17,17,0.95) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 45%, rgba(17,17,17,0.92) 100%)",
         }}
         aria-hidden
       />
@@ -221,18 +205,18 @@ function Hero() {
 
           {/* Headline */}
           <h1
-            className="mt-3 sm:mt-4 font-semibold text-white reveal"
+            className="mt-3 sm:mt-4 text-white reveal"
             style={{
               animationDelay: "120ms",
               wordSpacing: "0.02em",
-              letterSpacing: "0.04em",
-              color: "#F7F7F7",
+              letterSpacing: "0.02em",
+              fontWeight: 600,
             }}
           >
             <span className="block text-[36px] sm:text-5xl md:text-7xl lg:text-[84px] leading-[1.2] sm:leading-[1.15] md:leading-[1.1]">
               نبني <span className="text-gold">المستقبل</span>،
             </span>
-            <span className="block text-[28px] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mt-5 sm:mt-6 md:mt-8">
+            <span className="block text-[26px] sm:text-[32px] md:text-[44px] lg:text-[52px] leading-[1.25] mt-5 sm:mt-6 md:mt-8 font-medium text-white/95">
               نحفر الطريق.
             </span>
           </h1>
@@ -270,7 +254,7 @@ function Hero() {
         >
           <div className="flex items-center gap-3 min-w-0">
             <img
-              src={logoAsset.url}
+              src={logoWhite}
               alt=""
               className="h-8 w-8 sm:h-9 sm:w-9 object-contain shrink-0"
             />
