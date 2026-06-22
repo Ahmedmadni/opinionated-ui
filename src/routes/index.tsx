@@ -266,36 +266,16 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      {shouldReduceMotion ? (
-        <a
-          href="#partners"
-          aria-label="انتقل للأسفل"
-          className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
-        >
-          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
-          <span className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50">
-            <ChevronDown className="size-4 text-gold" />
-          </span>
-        </a>
-      ) : (
-        <motion.a
-          href="#partners"
-          aria-label="انتقل للأسفل"
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
-        >
-          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
-          <motion.span
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50"
-          >
-            <ChevronDown className="size-4 text-gold" />
-          </motion.span>
-        </motion.a>
-      )}
+      <a
+        href="#partners"
+        aria-label="انتقل للأسفل"
+        className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors motion-reduce:[&_*]:!animate-none"
+      >
+        <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
+        <span className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50 animate-bounce motion-reduce:animate-none">
+          <ChevronDown className="size-4 text-gold" />
+        </span>
+      </a>
     </section>
   );
 }
