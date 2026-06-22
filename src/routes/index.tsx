@@ -415,11 +415,12 @@ function WhySection() {
             intro="نُسلّم المشاريع في موعدها لأن الموارد بين أيدينا — لا انتظار، لا حلقات وسيطة."
           />
           <div className="mt-8 aspect-video overflow-hidden border border-charcoal/10 shadow-[var(--shadow-card)] bg-charcoal">
-            <video
-              ref={videoRef}
-              src={videoAsset.url}
-              muted
-              playsInline
+            <img
+              src={svcFleet}
+              alt="أسطول المعدات الثقيلة"
+              loading="lazy"
+              width={1024}
+              height={576}
               className="h-full w-full object-cover"
             />
           </div>
