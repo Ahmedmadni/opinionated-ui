@@ -13,8 +13,8 @@ import {
   Users,
   ChevronDown,
 } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
-import { useRef, useEffect } from "react";
+
+
 import {
   Accordion,
   AccordionContent,
@@ -24,10 +24,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/site/CountUp";
 import { SectionHead } from "@/components/site/SectionHead";
-import heroAsset from "@/assets/hero-fleet.jpg";
-
-import videoAsset from "@/assets/fleet-video.asset.json";
-import logoAsset from "@/assets/logo.asset.json";
+import heroAsset from "@/assets/hero-desert-sunset.jpg";
+import logoWhite from "@/assets/logo-white.png";
 import projDiriyah from "@/assets/project-diriyah.jpg";
 import projCrusher from "@/assets/project-crusher.jpg";
 import projRoads from "@/assets/project-roads.jpg";
@@ -155,20 +153,6 @@ function HomePage() {
 }
 
 function Hero() {
-  const shouldReduceMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (!videoRef.current) return;
-    if (shouldReduceMotion) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      videoRef.current.loop = false;
-    } else {
-      videoRef.current.loop = true;
-      videoRef.current.play().catch(() => {});
-    }
-  }, [shouldReduceMotion]);
   return (
     <section
       dir="rtl"
@@ -178,14 +162,12 @@ function Hero() {
                  sm:[@supports(height:100dvh)]:min-h-[90dvh]
                  md:[@supports(height:100dvh)]:min-h-[100dvh]"
     >
-      <video
-        ref={videoRef}
-        src="/hero-8fps.mp4"
-        poster={heroAsset}
-        muted
-        playsInline
-        preload="auto"
-        aria-label="أسطول حفارات شركة الأسطول الآلي"
+      <img
+        src={heroAsset}
+        alt="مشاريع البنية التحتية للأسطول الآلي عند غروب الشمس في الرياض"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
@@ -194,7 +176,7 @@ function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.55) 45%, rgba(17,17,17,0.95) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 45%, rgba(17,17,17,0.92) 100%)",
         }}
         aria-hidden
       />
@@ -223,18 +205,18 @@ function Hero() {
 
           {/* Headline */}
           <h1
-            className="mt-3 sm:mt-4 font-semibold text-white reveal"
+            className="mt-3 sm:mt-4 text-white reveal"
             style={{
               animationDelay: "120ms",
               wordSpacing: "0.02em",
-              letterSpacing: "0.04em",
-              color: "#F7F7F7",
+              letterSpacing: "0.02em",
+              fontWeight: 600,
             }}
           >
             <span className="block text-[36px] sm:text-5xl md:text-7xl lg:text-[84px] leading-[1.2] sm:leading-[1.15] md:leading-[1.1]">
               نبني <span className="text-gold">المستقبل</span>،
             </span>
-            <span className="block text-[28px] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.15] md:leading-[1.1] mt-5 sm:mt-6 md:mt-8">
+            <span className="block text-[26px] sm:text-[32px] md:text-[44px] lg:text-[52px] leading-[1.25] mt-5 sm:mt-6 md:mt-8 font-medium text-white/95">
               نحفر الطريق.
             </span>
           </h1>
@@ -272,7 +254,7 @@ function Hero() {
         >
           <div className="flex items-center gap-3 min-w-0">
             <img
-              src={logoAsset.url}
+              src={logoWhite}
               alt=""
               className="h-8 w-8 sm:h-9 sm:w-9 object-contain shrink-0"
             />
@@ -284,36 +266,16 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      {shouldReduceMotion ? (
-        <a
-          href="#partners"
-          aria-label="انتقل للأسفل"
-          className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
-        >
-          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
-          <span className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50">
-            <ChevronDown className="size-4 text-gold" />
-          </span>
-        </a>
-      ) : (
-        <motion.a
-          href="#partners"
-          aria-label="انتقل للأسفل"
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors"
-        >
-          <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
-          <motion.span
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50"
-          >
-            <ChevronDown className="size-4 text-gold" />
-          </motion.span>
-        </motion.a>
-      )}
+      <a
+        href="#partners"
+        aria-label="انتقل للأسفل"
+        className="absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-gold transition-colors motion-reduce:[&_*]:!animate-none"
+      >
+        <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase">Scroll</span>
+        <span className="flex items-center justify-center h-7 w-7 rounded-full border border-gold/50 animate-bounce motion-reduce:animate-none">
+          <ChevronDown className="size-4 text-gold" />
+        </span>
+      </a>
     </section>
   );
 }
@@ -429,20 +391,7 @@ function Services() {
 }
 
 function WhySection() {
-  const shouldReduceMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (!videoRef.current) return;
-    if (shouldReduceMotion) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      videoRef.current.loop = false;
-    } else {
-      videoRef.current.loop = true;
-      videoRef.current.play().catch(() => {});
-    }
-  }, [shouldReduceMotion]);
   return (
     <section className="relative bg-sand py-24 overflow-hidden">
       <div className="container-x grid lg:grid-cols-12 gap-12">
@@ -453,11 +402,12 @@ function WhySection() {
             intro="نُسلّم المشاريع في موعدها لأن الموارد بين أيدينا — لا انتظار، لا حلقات وسيطة."
           />
           <div className="mt-8 aspect-video overflow-hidden border border-charcoal/10 shadow-[var(--shadow-card)] bg-charcoal">
-            <video
-              ref={videoRef}
-              src={videoAsset.url}
-              muted
-              playsInline
+            <img
+              src={svcFleet}
+              alt="أسطول المعدات الثقيلة"
+              loading="lazy"
+              width={1024}
+              height={576}
               className="h-full w-full object-cover"
             />
           </div>

@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logoAsset from "@/assets/logo.asset.json";
+import logoWhite from "@/assets/logo-white.png";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -34,12 +34,8 @@ export function SiteHeader() {
       )}
     >
       <div className="container-x flex h-20 items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="شركة الأسطول الآلي">
-          <img src={logoAsset.url} alt="" className="h-12 w-12 object-contain" />
-          <div className="hidden sm:block leading-tight">
-            <div className="text-base font-bold text-white">الأسطول الآلي</div>
-            <div className="text-[10px] tracking-[0.2em] text-gold uppercase">Alostool Alaali</div>
-          </div>
+        <Link to="/" className="flex items-center gap-2" aria-label="شركة الأسطول الآلي">
+          <img src={logoWhite} alt="الأسطول الآلي" className="h-14 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="رئيسية">
