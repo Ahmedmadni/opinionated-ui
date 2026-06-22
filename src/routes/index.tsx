@@ -24,10 +24,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { CountUp } from "@/components/site/CountUp";
 import { SectionHead } from "@/components/site/SectionHead";
-import heroAsset from "@/assets/hero-fleet.jpg";
-
-import videoAsset from "@/assets/fleet-video.asset.json";
-import logoAsset from "@/assets/logo.asset.json";
+import heroAsset from "@/assets/hero-desert-sunset.jpg";
+import logoWhite from "@/assets/logo-white.png";
 import projDiriyah from "@/assets/project-diriyah.jpg";
 import projCrusher from "@/assets/project-crusher.jpg";
 import projRoads from "@/assets/project-roads.jpg";
