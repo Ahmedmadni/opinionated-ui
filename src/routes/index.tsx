@@ -13,8 +13,8 @@ import {
   Users,
   ChevronDown,
 } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
-import { useRef, useEffect } from "react";
+
+
 import {
   Accordion,
   AccordionContent,
@@ -391,20 +391,7 @@ function Services() {
 }
 
 function WhySection() {
-  const shouldReduceMotion = useReducedMotion();
-  const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (!videoRef.current) return;
-    if (shouldReduceMotion) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      videoRef.current.loop = false;
-    } else {
-      videoRef.current.loop = true;
-      videoRef.current.play().catch(() => {});
-    }
-  }, [shouldReduceMotion]);
   return (
     <section className="relative bg-sand py-24 overflow-hidden">
       <div className="container-x grid lg:grid-cols-12 gap-12">
